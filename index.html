@@ -344,6 +344,7 @@ body{background:#fff4f8;background-image:radial-gradient(ellipse at 0% 0%,#ffe0e
 .star-count-badge{display:inline-flex;align-items:center;justify-content:center;gap:5px;width:88px;min-height:34px;box-sizing:border-box;border:1px solid #dfd0e7;border-radius:999px;padding:5px 8px;background:#f3eaf9;color:#775b86;font-size:15px;line-height:1.2}.star-count-badge>b{font-size:19px;font-variant-numeric:tabular-nums}.star-count-badge.stars-medium{background:#d9c2ec;border-color:#c2a4d9;color:#604176}.star-count-badge.stars-many{background:#65377d;border-color:#542668;color:#fff}.star-count-badge.stars-zero{background:#f6f1f8;border-color:#e6dfea;color:#8b7a92}.badge-crown{font-size:13px;line-height:1}.record-score{font-size:15px}.record-expand{font-size:10px;margin-top:4px;white-space:nowrap}.record-choices>.record-progress{padding:6px 2px 8px;margin:0}.star-record>summary{padding:11px 0}.record-score .star-count-badge>span:not(.badge-crown){color:#e3ac35}.record-score .stars-many>span:not(.badge-crown){color:#ffe39a}
 </style>
 <style id="direct-choices-test26">.direct-choices{margin-top:14px}.direct-choices .tri .zh{font-size:24px}.direct-choices .tri .ko{font-size:14px}.direct-choices .choice{min-height:180px}@media(min-width:600px){.direct-choices .tri .zh{font-size:30px}.direct-choices .tri .ko{font-size:17px}.direct-choices .choice{min-height:220px}}</style>
+<style id="ask-prompt">.ask-prompt{font-size:28px;line-height:1.3;letter-spacing:-.4px;margin:8px 0 4px;color:var(--ink);font-weight:800;overflow-wrap:anywhere}@media(min-width:600px){.ask-prompt{font-size:36px}}@media(min-width:1024px){.ask-prompt{font-size:42px}}@media(max-width:359px){.ask-prompt{font-size:24px}}</style>
 </head>
 <body>
 <div id="app"></div>
@@ -2697,6 +2698,7 @@ const BANK = [
  {
   "id": "pets",
   "en": "Cat person or dog person?",
+  "ask": "Are you a cat person or a dog person?",
   "a": {
    "e": "🐱",
    "en": "Cat person"
@@ -2709,6 +2711,7 @@ const BANK = [
  {
   "id": "landscape",
   "en": "Beach or mountains?",
+  "ask": "Where would you rather go: the beach or the mountains?",
   "a": {
    "e": "🏖️",
    "en": "Beach"
@@ -2721,6 +2724,7 @@ const BANK = [
  {
   "id": "outing",
   "en": "Travel or stay home?",
+  "ask": "On a day off, would you rather travel or stay home?",
   "a": {
    "e": "🧳",
    "en": "Travel"
@@ -2733,6 +2737,7 @@ const BANK = [
  {
   "id": "drink",
   "en": "Iced or hot drinks?",
+  "ask": "Do you prefer iced drinks or hot drinks?",
   "a": {
    "e": "🧊",
    "en": "Iced"
@@ -2745,6 +2750,7 @@ const BANK = [
  {
   "id": "place",
   "en": "Hometown or abroad?",
+  "ask": "Would you rather stay in your hometown or live abroad?",
   "a": {
    "e": "🏡",
    "en": "Hometown"
@@ -2757,6 +2763,7 @@ const BANK = [
  {
   "id": "personality",
   "en": "Extrovert or introvert?",
+  "ask": "Are you more of an extrovert or an introvert?",
   "a": {
    "e": "🎉",
    "en": "Extrovert"
@@ -2769,6 +2776,7 @@ const BANK = [
  {
   "id": "season",
   "en": "Summer or winter?",
+  "ask": "Which season do you like better?",
   "a": {
    "e": "☀️",
    "en": "Summer"
@@ -2781,6 +2789,7 @@ const BANK = [
  {
   "id": "living",
   "en": "City or countryside?",
+  "ask": "Would you rather live in the city or the countryside?",
   "a": {
    "e": "🏙️",
    "en": "City"
@@ -2793,6 +2802,7 @@ const BANK = [
  {
   "id": "weather",
   "en": "Sunny days or rainy days?",
+  "ask": "Which kind of day do you like better?",
   "a": {
    "e": "🌞",
    "en": "Sunny days"
@@ -2805,6 +2815,7 @@ const BANK = [
  {
   "id": "color",
   "en": "Black or white?",
+  "ask": "Which color do you like better?",
   "a": {
    "e": "🖤",
    "en": "Black"
@@ -2817,6 +2828,7 @@ const BANK = [
  {
   "id": "staple",
   "en": "Rice or noodles?",
+  "ask": "Which do you like better: rice or noodles?",
   "a": {
    "e": "🍚",
    "en": "Rice"
@@ -2829,6 +2841,7 @@ const BANK = [
  {
   "id": "curry",
   "en": "Mix your curry or keep it separate?",
+  "ask": "How do you eat your curry and rice?",
   "a": {
    "e": "🥄",
    "en": "Mix it up"
@@ -2841,6 +2854,7 @@ const BANK = [
  {
   "id": "hand",
   "en": "Left-handed or right-handed?",
+  "ask": "Which hand do you write with?",
   "a": {
    "e": "👈",
    "en": "Left-handed"
@@ -2853,6 +2867,7 @@ const BANK = [
  {
   "id": "reading",
   "en": "Comics or novels?",
+  "ask": "What do you like to read more?",
   "a": {
    "e": "📚",
    "en": "Comics"
@@ -2865,6 +2880,7 @@ const BANK = [
  {
   "id": "palette",
   "en": "Bright colors or dark colors?",
+  "ask": "Which kind of colors do you like more?",
   "a": {
    "e": "🌈",
    "en": "Bright colors"
@@ -2877,6 +2893,7 @@ const BANK = [
  {
   "id": "fastfood",
   "en": "McDonald's or KFC?",
+  "ask": "Where would you rather get fast food?",
   "a": {
    "e": "🍟",
    "en": "McDonald's"
@@ -2889,6 +2906,7 @@ const BANK = [
  {
   "id": "phonebrand",
   "en": "Samsung or iPhone?",
+  "ask": "Which phone would you rather have?",
   "a": {
    "e": "📱",
    "en": "Samsung"
@@ -2901,6 +2919,7 @@ const BANK = [
  {
   "id": "energy",
   "en": "Always tired or refreshed after a nap?",
+  "ask": "Which sounds more like you?",
   "a": {
    "e": "🥱",
    "en": "Always tired"
@@ -2913,6 +2932,7 @@ const BANK = [
  {
   "id": "device",
   "en": "Phone or computer?",
+  "ask": "Which do you use more?",
   "a": {
    "e": "📱",
    "en": "Phone"
@@ -2925,6 +2945,7 @@ const BANK = [
  {
   "id": "sociallife",
   "en": "Group life or solo life?",
+  "ask": "Do you enjoy group life or time on your own more?",
   "a": {
    "e": "👥",
    "en": "Group life"
@@ -2937,6 +2958,7 @@ const BANK = [
  {
   "id": "flavor",
   "en": "Sweet or salty?",
+  "ask": "Which do you crave more: sweet or salty?",
   "a": {
    "e": "🍰",
    "en": "Sweet"
@@ -2949,6 +2971,7 @@ const BANK = [
  {
   "id": "breakfast",
   "en": "Rice or bread for breakfast?",
+  "ask": "What do you like to eat for breakfast?",
   "a": {
    "e": "🍚",
    "en": "Rice"
@@ -2961,6 +2984,7 @@ const BANK = [
  {
   "id": "schedule",
   "en": "Early bird or night owl?",
+  "ask": "Are you an early bird or a night owl?",
   "a": {
    "e": "🌅",
    "en": "Early bird"
@@ -2973,6 +2997,7 @@ const BANK = [
  {
   "id": "contact",
   "en": "Texting or calling?",
+  "ask": "How do you like to chat with friends?",
   "a": {
    "e": "💬",
    "en": "Texting"
@@ -2985,6 +3010,7 @@ const BANK = [
  {
   "id": "camera",
   "en": "Taking photos or being in photos?",
+  "ask": "Do you like taking photos or being in them?",
   "a": {
    "e": "📸",
    "en": "Taking photos"
@@ -2997,6 +3023,7 @@ const BANK = [
  {
   "id": "perform",
   "en": "Singing or dancing?",
+  "ask": "Would you rather sing or dance?",
   "a": {
    "e": "🎤",
    "en": "Singing"
@@ -3009,6 +3036,7 @@ const BANK = [
  {
   "id": "screen",
   "en": "Movies or TV series?",
+  "ask": "What do you like to watch more?",
   "a": {
    "e": "🎬",
    "en": "Movies"
@@ -3021,6 +3049,7 @@ const BANK = [
  {
   "id": "animation",
   "en": "Animation or live action?",
+  "ask": "Do you like to watch animation or live action more?",
   "a": {
    "e": "🎨",
    "en": "Animation"
@@ -3033,6 +3062,7 @@ const BANK = [
  {
   "id": "activity",
   "en": "Sports or video games?",
+  "ask": "How do you like to spend your free time?",
   "a": {
    "e": "🏀",
    "en": "Sports"
@@ -3045,6 +3075,7 @@ const BANK = [
  {
   "id": "planning",
   "en": "Plan first or just go?",
+  "ask": "When you go out, which one are you?",
   "a": {
    "e": "🗓️",
    "en": "Plan first"
@@ -3057,6 +3088,7 @@ const BANK = [
  {
   "id": "punctual",
   "en": "Arrive early or right on time?",
+  "ask": "When you meet friends, when do you usually arrive?",
   "a": {
    "e": "⏰",
    "en": "Arrive early"
@@ -3069,6 +3101,7 @@ const BANK = [
  {
   "id": "homework",
   "en": "Homework first or last minute?",
+  "ask": "When do you usually do your homework?",
   "a": {
    "e": "📝",
    "en": "Homework first"
@@ -3081,6 +3114,7 @@ const BANK = [
  {
   "id": "money",
   "en": "Save money or spend it?",
+  "ask": "What do you usually do with your money?",
   "a": {
    "e": "🐷",
    "en": "Save it"
@@ -3093,6 +3127,7 @@ const BANK = [
  {
   "id": "attraction",
   "en": "Amusement park or aquarium?",
+  "ask": "Where would you rather go for a day out?",
   "a": {
    "e": "🎡",
    "en": "Amusement park"
@@ -3105,6 +3140,7 @@ const BANK = [
  {
   "id": "timetravel",
   "en": "Back to the past or into the future?",
+  "ask": "If you had a time machine, where would you go?",
   "a": {
    "e": "🕰️",
    "en": "The past"
@@ -3143,7 +3179,7 @@ function connectMQTT(url, opts) {
 
 /* ================= router ================= */
 const params = new URLSearchParams(location.search);
-const ROOMS = 5;
+const ROOMS = 12;
 const TODAY = new Date(Date.now() + 8 * 3600e3).toISOString().slice(0, 10).replace(/-/g, "");
 const S = (params.get("s") || ("tk" + TODAY)).replace(/[^a-z0-9]/gi, "").slice(0, 16);
 const URLB = brokerUrl(params.get("b") || "hivemq");
@@ -3608,6 +3644,7 @@ function startRoom() {
     app.innerHTML = `<div class="wrap">${header()}
       <div class="card">
         <div class="qhead">Question ${st.qi + 1} / ${st.total}</div>
+        <h1 class="ask-prompt">${esc(q.ask || q.en)}</h1>
         <div class="choices direct-choices">${choiceBtn(q, "A")}${choiceBtn(q, "B")}</div>
         <div class="hint">${mine ? tri({en:"Sent! Waiting for everyone…"}) : tri({en:"Pick one! You can't change it after you choose."})}</div>
         <div class="status">
@@ -3669,7 +3706,7 @@ function startRoom() {
     const col = k => { const o = k === "A" ? q.a : q.b, list = listOf(k); return `<section class="answer-result ${k}"><div class="answer-result-heading"><span class="result-emoji">${esc(o.e)}</span>${tri(o)}<span class="result-count">${list.length}<small>${list.length === 1 ? "person" : "people"}</small></span></div>${list.length ? chipsFor(list) : `<div class="result-empty">${tri({en:"Nobody picked this one"})}</div>`}</section>`; };
     const discoveries = matchDiscoveries();
     const last = st.qi + 1 >= st.total;
-    app.innerHTML = `<div class="wrap reveal-layout">${header()}<div class="reveal-content"><div class="card reveal-question"><div class="completion-heading"><span class="completion-icon">✓</span><div><div class="qhead">${st.qi + 1} / ${st.total}</div><h1>${tri({en:"Question complete!"})}</h1></div></div><div class="completed-question">${tri(q)}</div>${discoveries.notice}<div class="answer-results">${col("A")}${col("B")}</div></div>${discoveries.milestones}</div>${scoreCards()}<div class="card discussion">${leadBar(`<button class="btn teal" data-act="next">${last ? "See results" : "Next question ▶"}</button>${last ? "" : '<button class="btn ghost sm" data-act="finish">End and see results</button>'}`)}${waitLeader({en:"Waiting for the leader to start the next question."})}</div></div>`;
+    app.innerHTML = `<div class="wrap reveal-layout">${header()}<div class="reveal-content"><div class="card reveal-question"><div class="completion-heading"><span class="completion-icon">✓</span><div><div class="qhead">${st.qi + 1} / ${st.total}</div><h1>${tri({en:"Question complete!"})}</h1></div></div><div class="completed-question">${tri({en: q.ask || q.en})}</div>${discoveries.notice}<div class="answer-results">${col("A")}${col("B")}</div></div>${discoveries.milestones}</div>${scoreCards()}<div class="card discussion">${leadBar(`<button class="btn teal" data-act="next">${last ? "See results" : "Next question ▶"}</button>${last ? "" : '<button class="btn ghost sm" data-act="finish">End and see results</button>'}`)}${waitLeader({en:"Waiting for the leader to start the next question."})}</div></div>`;
   }
   function personalRanking(state, selfId) {
     const valid = a => a === "A" || a === "B";
@@ -3711,7 +3748,7 @@ function startRoom() {
 
 
 /* ======================================================================
-   LANDING: pick a room and a role (5 rooms are always open)
+   LANDING: pick a room and a role (12 rooms are always open)
    ====================================================================== */
 function startLanding() {
   const app = $("#app");
